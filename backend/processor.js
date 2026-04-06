@@ -39,7 +39,9 @@ const FEEDS = [
     { name: 'Lifehack.org', url: 'https://www.lifehack.org/feed' },
     { name: 'Hackslifestyle.com', url: 'https://hackslifestyle.com/feed/' },
     { name: 'Happierhuman.com', url: 'https://www.happierhuman.com/feed/' },
-    { name: '', url: '' },
+    { name: 'Mindbodygreen.com', url: 'https://www.mindbodygreen.com/rss/featured.xml' },
+    { name: 'Fortune.com', url: 'https://fortune.com/feed/fortune-feeds/?id=3230629' },
+    { name: 'GFmag.com', url: 'https://gfmag.com/feed/' },
 ];
 
 // 1. Categorie-specifieke Unsplash lijsten
@@ -150,7 +152,7 @@ async function processNews() {
             console.log(`📡 Scannen: ${feedInfo.name}`);
             const feed = await parser.parseURL(feedInfo.url);
 
-            for (const item of feed.items.slice(0, 15)) {
+            for (const item of feed.items.slice(0, 30)) {
                 if (languages.nl.some(art => art.link === item.link)) {
                     continue;
                 }
@@ -253,7 +255,7 @@ async function processNews() {
                                 date: new Date().toISOString(),
                                 category: category
                             });
-                            if (languages[lang].length > 50) languages[lang].pop();
+                            if (languages[lang].length > 150) languages[lang].pop();
                         });
                         console.log(`✨ Succes: ${item.title} toegevoegd.`);
                     }

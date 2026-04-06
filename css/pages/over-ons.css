@@ -1,0 +1,107 @@
+.about-hero-vibrant {
+    background-color: var(--white);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.badge {
+    background-color: var(--bright-yellow);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--dark-text);
+    display: inline-block;
+    margin-bottom: 20px;
+}
+.vrolijk-sectie {
+    margin-top: 80px;
+}
+
+/* Feature Icons */
+.icon-features {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 60px 0;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    text-align: center;
+    max-width: 280px;
+}
+
+.icon-circle {
+    font-size: 3rem;
+    background: var(--white);
+    width: 110px;
+    height: 110px;
+    line-height: 110px;
+    border-radius: 50%;
+    margin: 0 auto 24px;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* AI Workflow Section */
+.how-it-works-simple {
+    background-color: #F0FFF0; /* Helder en fris groen */
+    padding: 80px 40px;
+    border-radius: var(--radius-lg);
+    margin: 40px 0;
+}
+
+.simple-steps {
+    list-style: none;
+    margin-top: 40px;
+}
+
+.simple-steps li {
+    background: var(--white);
+    margin-bottom: 16px;
+    padding: 24px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: var(--shadow-sm);
+}
+
+.simple-steps li strong {
+    color: var(--bright-green);
+    min-width: 140px;
+    font-size: 1.1rem;
+}
+@media (max-width: 767px) {
+    /* Stap-kaartjes stapelen voor leesbaarheid */
+    .simple-steps li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 20px;
+    }
+
+    /* Breedtebeperking van de titels opheffen */
+    .simple-steps li strong {
+        min-width: auto;
+        display: block;
+        font-size: 1.2rem;
+    }
+
+    /* Sectie padding aanpassen voor kleine schermen */
+    .how-it-works-simple {
+        padding: 40px 20px;
+    }
+
+    /* Icon features ook centreren op mobiel */
+    .icon-features {
+        gap: 30px;
+    }
+
+    .feature-item {
+        max-width: 100%;
+    }
+}

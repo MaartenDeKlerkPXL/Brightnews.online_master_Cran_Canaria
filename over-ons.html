@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNFX3R9BQV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-ZNFX3R9BQV');
+    </script>
+    <link rel="icon" type="image/png" href="assets/brightnews-logo-faviconv5.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Over Ons ✨ BrightNews</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages/over-ons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="data/translations.js"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+<header>
+    <nav class="container">
+        <div class="nav-left-group">
+            <div class="dropdown language-picker">
+                <button class="dropbtn" id="current-lang">
+                    🇺🇸 English <span class="arrow">▼</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="wisselTaal('en', '🇺🇸 English', event)">🇺🇸 English</a>
+                    <a href="#" onclick="wisselTaal('nl', '🇳🇱 Nederlands', event)">🇳🇱 Nederlands</a>
+                    <a href="#" onclick="wisselTaal('de', '🇩🇪 Deutsch', event)">🇩🇪 Deutsch</a>
+                    <a href="#" onclick="wisselTaal('fr', '🇫🇷 Français', event)">🇫🇷 Français</a>
+                    <a href="#" onclick="wisselTaal('es', '🇪🇸 Español', event)">🇪🇸 Español</a>
+                </div>
+            </div>
+
+            <!--            <a href="index.html" class="logo">Bright<span>News</span></a>-->
+
+            <a href="index.html"><img src="assets/brightnews-logo.png" height="200" width="300" class="nav-logo"/></a></div>
+        <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Menu openen">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="mobileMenu">
+            <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+            <li><a href="over-ons.html" data-i18n="nav_about">Over Ons</a></li>
+<!--            <li><a href="abonnementen.html" data-i18n="nav_premium">Abonnementen</a></li>-->
+
+<!--            <li class="nav-profile-desktop">-->
+<!--                <a href="profiel.html" class="profile-icon">-->
+<!--                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">-->
+<!--                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>-->
+<!--                        <circle cx="12" cy="7" r="4"></circle>-->
+<!--                    </svg>-->
+<!--                </a>-->
+<!--            </li>-->
+
+<!--            <li class="nav-profile-mobile">-->
+<!--                <a href="profiel.html" class="profile-link-text"  data-i18n="nav_profile">-->
+<!--                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">-->
+<!--                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>-->
+<!--                        <circle cx="12" cy="7" r="4"></circle>-->
+<!--                    </svg>-->
+<!--                    Profiel-->
+<!--                </a>-->
+<!--            </li>-->
+        </ul>
+
+    </nav>
+</header>
+<main>
+    <section class="about-hero-vibrant">
+        <div class="container">
+            <span class="badge" data-i18n="about_badge">Hallo zonneschijn! ☀️</span>
+            <h1 data-i18n="about_hero_title">Wij zijn jouw dagelijkse dosis goed nieuws.</h1>
+            <p data-i18n="about_hero_p">Eerlijk is eerlijk: de wereld kan soms best een beetje overweldigend zijn. Bij BrightNews zetten we de zonnebril op en focussen we ons op de mooie dingen die wél gebeuren.</p>
+        </div>
+    </section>
+
+    <section class="container vrolijk-sectie">
+        <div class="text-center">
+            <h2 data-i18n="about_why_title">Waarom BrightNews?</h2>
+            <p data-i18n="about_why_p">Omdat we geloven dat een positieve blik besmettelijk is! Van wetenschappers die oceanen schoonmaken tot kleine daden van vriendelijkheid op de hoek van de straat; er is zoveel om vrolijk van te worden. Wij filteren de ruis weg en laten de lichtpuntjes zien.</p>
+        </div>
+
+        <div class="icon-features">
+            <div class="feature-item">
+                <div class="icon-circle">🌈</div>
+                <h3 data-i18n="about_feat1_title">Geen Wolken</h3>
+                <p data-i18n="about_feat1_p">Alleen berichten waar je energie van krijgt en die je met een gerust hart kunt delen.</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon-circle">🌍</div>
+                <h3 data-i18n="about_feat2_title">Wereldwijd</h3>
+                <p data-i18n="about_feat2_p">Goede dingen gebeuren overal, van Amsterdam tot aan de andere kant van de oceaan.</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon-circle">⏰</div>
+                <h3 data-i18n="about_feat3_title">Stipt om 12:00</h3>
+                <p data-i18n="about_feat3_p">Precies op tijd voor de lunch serveren wij je dagelijkse dosis goed nieuws. Elke dag vers om 12:00 en 00:00 UTC (12 PM en 12 AM).</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works-simple">
+        <div class="container">
+            <h2 data-i18n="about_how_title">Hoe toveren we dit op je scherm?</h2>
+            <p data-i18n="about_how_p">Geen ingewikkelde handleidingen, maar een slimme computer (onze AI) die dol is op blije verhalen. Dit is wat er elke dag gebeurt:</p>
+
+            <ul class="simple-steps">
+                <li data-i18n="about_step1"><strong>Stap 1: Speuren 🔍</strong> - Onze computer leest duizenden kranten en blogs over de hele wereld.</li>
+                <li data-i18n="about_step2"><strong>Stap 2: Glimlach-check 😊</strong> - Is het bericht hoopvol? Worden we er blij van? Zo ja, dan mag het door!</li>
+                <li data-i18n="about_step3"><strong>Stap 3: Vertalen 🗣️</strong> - We maken er een leuk kort verhaal van in jouw eigen taal.</li>
+                <li data-i18n="about_step4"><strong>Stap 4: Tadaa! 🎉</strong> - Om 12:00 uur precies staat het voor je klaar op de website.</li>
+            </ul>
+        </div>
+    </section>
+</main>
+<footer class="main-footer">
+    <div class="container footer-grid">
+        <div class="footer-about">
+            <div class="footer-logo">Bright<span>News</span></div>
+            <p data-i18n="footer_text">
+                Founded and developed by <strong>Maarten de Klerk</strong>.
+                Maarten is the owner and lead developer of BrightNews,
+                dedicated to spreading positive vibes through tech.
+            </p>
+        </div>
+
+        <div class="footer-links">
+            <h4 data-i18n="footer_explore">Explore</h4>
+            <ul>
+                <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+                <li><a href="over-ons.html" data-i18n="footer_mission">Our Mission</a></li>
+                <li><a href="abonnementen.html" data-i18n="nav_premium">Premium</a></li>
+                <li><a href="profiel.html" data-i18n="footer_acc">My Account</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-links">
+            <h4 data-i18n="footer_community">Community</h4>
+            <ul>
+                <li><a href="Privacy.html" data-i18n="footer_privacy">Privacy Policy</a></li>
+                <li><a href="algemeene-voorwaarden.html" data-i18n="footer_service_terms">Terms of Service</a></li>
+                <li><a href="contact.html" data-i18n="footer_support">Contact Support</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-socials">
+            <h4 data-i18n="footer_follow">Follow BrightNews</h4>
+            <div class="social-icons">
+                <a href="https://instagram.com/maartendeklerk" target="_blank" class="social-btn">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://linkedin.com/in/maartendeklerk" target="_blank" class="social-btn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/MaartenDeKlerkPXL/Brightnews.online" target="_blank" class="social-btn">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:info@BrightNews.online?subject=Vraag%20over%20BrightNews" class="social-btn">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <div class="framework-badge">
+                <span data-i18n="footer_no_frameworks">100% Vanilla JS • No Frameworks</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p data-i18n="footer_created_by">&copy; 2026 BrightNews • All rights reserved • Created with 💚 in the Netherlands</p>
+    </div>
+</footer>
+<script>
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobileMenu');
+        const hamburger = document.querySelector('.hamburger');
+
+        if (menu) {
+            menu.classList.toggle('active');
+            console.log("Menu status:", menu.classList.contains('active') ? "Open" : "Dicht");
+        } else {
+            console.error("Fout: Element #mobileMenu niet gevonden!");
+        }
+    }
+</script>
+</body>
+</html>

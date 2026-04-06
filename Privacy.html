@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNFX3R9BQV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-ZNFX3R9BQV');
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/brightnews-logo-faviconv5.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="data/translations.js"></script>
+  <script src="index.js"></script>
+
+  <title>Privacy & Colofon | BrightNews</title>
+  <style>
+    :root {
+      --bright-green: #32cc32;
+      --dark-text: #222;
+      --light-bg: #F8FBF8;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      color: var(--dark-text);
+      margin: 0;
+      padding: 0;
+      background-color: var(--light-bg);
+    }
+
+    div.privacy-header {
+      background: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 3rem;
+    }
+    header{
+      margin-bottom: 0 !important;
+      border-bottom: none !important;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      display: grid;
+      gap: 2rem;
+    }
+
+    section {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    h1, h2 {
+      color: var(--bright-green) !important;
+    }
+
+    .colofon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .label {
+      font-weight: bold;
+      display: block;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    a {
+      color: var(--bright-green);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+    footer.main-footer {
+      margin-top: 3rem; !important;
+    }
+  </style>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/index.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages/artikel.css">
+</head>
+<body>
+<header>
+<nav class="container">
+  <div class="nav-left-group">
+    <div class="dropdown language-picker">
+      <button class="dropbtn" id="current-lang">
+        🇺🇸 English <span class="arrow">▼</span>
+      </button>
+      <div class="dropdown-content">
+        <a href="#" onclick="wisselTaal('en', '🇺🇸 English', event)">🇺🇸 English</a>
+        <a href="#" onclick="wisselTaal('nl', '🇳🇱 Nederlands', event)">🇳🇱 Nederlands</a>
+        <a href="#" onclick="wisselTaal('de', '🇩🇪 Deutsch', event)">🇩🇪 Deutsch</a>
+        <a href="#" onclick="wisselTaal('fr', '🇫🇷 Français', event)">🇫🇷 Français</a>
+        <a href="#" onclick="wisselTaal('es', '🇪🇸 Español', event)">🇪🇸 Español</a>
+      </div>
+    </div>
+
+    <!--            <a href="index.html" class="logo">Bright<span>News</span></a>-->
+
+    <a href="index.html"><img src="assets/brightnews-logo.png" height="200" width="300" class="nav-logo"/></a></div>
+  <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Menu openen">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="mobileMenu">
+    <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+    <li><a href="over-ons.html" data-i18n="nav_about">Over Ons</a></li>
+    <li><a href="abonnementen.html" data-i18n="nav_premium">Abonnementen</a></li>
+
+    <li class="nav-profile-desktop">
+      <a href="profiel.html" class="profile-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      </a>
+    </li>
+
+    <li class="nav-profile-mobile">
+      <a href="profiel.html" class="profile-link-text"  data-i18n="nav_profile">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        Profiel
+      </a>
+    </li>
+  </ul>
+</nav>
+  </header>
+<div class="privacy-header">
+  <h1 data-i18n="privacy_header_title">Privacy & Clarity ✨</h1>
+  <p data-i18n="privacy_header_subtitle">How we protect your data at BrightNews.</p>
+</div>
+
+<main class="container">
+  <section class="colofon-section">
+    <h2 data-i18n="colofon_title">Who are we? (Colofon)</h2>
+    <div class="colofon-grid">
+      <div>
+        <span class="label" data-i18n="colofon_label_trade">Trade Name</span>
+        <span data-i18n="colofon_val_trade">BrightNews</span>
+      </div>
+      <div>
+        <span class="label" data-i18n="colofon_label_legal">Legal Status</span>
+        <span data-i18n="colofon_val_legal">In formation (Maarten de Klerk)</span>
+      </div>
+      <div>
+        <span class="label" data-i18n="colofon_label_address">Address</span>
+        <span data-i18n="colofon_val_address_full">Vossenstraat 19, 6286BW Nijswiller</span>,
+        <span data-i18n="colofon_val_country">The Netherlands</span>
+      </div>
+      <div>
+        <span class="label" data-i18n="colofon_label_contact">Contact</span>
+        <a href="mailto:info@brightnews.online">info@BrightNews.online</a>
+      </div>
+      <div>
+        <span class="label" data-i18n="colofon_label_odr">Dispute Resolution</span>
+        <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener" data-i18n="colofon_link_odr">EU ODR Platform</a>
+      </div>
+    </div>
+  </section>
+
+
+  <section>
+    <h2 data-i18n="privacy_title">Your Privacy</h2>
+    <p data-i18n="privacy_text_intro">At BrightNews, we focus on positivity. That applies to your data too. We only process what is strictly necessary to provide our service.</p>
+    <ul>
+      <li data-i18n="privacy_list_subscription"><strong>Subscriptions:</strong> For "Glow" and "Shine" members, we process payment details via Ko-fi. We do not store credit card numbers on our own servers.</li>
+      <li data-i18n="privacy_list_hosting"><strong>Data Storage:</strong> Your data is hosted on Strato servers within the EU. We have a Data Processing Agreement (DPA) to ensure your privacy is guaranteed.</li>
+      <li data-i18n="privacy_list_no_sell"><strong>Zero Third-Party Sales:</strong> We never sell, trade, or leak your data to advertisers.</li>
+      <li data-i18n="privacy_list_rights"><strong>Your Rights:</strong> Under the GDPR, you have the right to access, rectify, or delete your data at any time. Send a request to our support email.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 data-i18n="cookies_title">Cookies & Technology</h2>
+    <p data-i18n="cookies_text">BrightNews uses functional cookies and local storage to remember your language preferences and login session. We use minimal, privacy-friendly analytics to improve the site. For any tracking beyond functional necessity, we will always ask your permission first.</p>
+  </section>
+
+  <section>
+    <h2 data-i18n="transparency_title">AI & Accessibility</h2>
+    <p data-i18n="transparency_text">Our news is generated by AI. We believe in transparency: every article includes an AI-disclaimer. Furthermore, we are committed to the <strong>WCAG 2.1 AA</strong> standards to ensure that positive news is accessible to everyone, regardless of disability.</p>
+  </section>
+</main>
+
+<footer class="main-footer">
+  <div class="container footer-grid">
+    <div class="footer-about">
+      <div class="footer-logo">Bright<span>News</span></div>
+      <p data-i18n="footer_text">
+        Founded and developed by <strong>Maarten de Klerk</strong>.
+        Maarten is the owner and lead developer of BrightNews,
+        dedicated to spreading positive vibes through tech.
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <h4 data-i18n="footer_explore">Explore</h4>
+      <ul>
+        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+        <li><a href="over-ons.html" data-i18n="footer_mission">Our Mission</a></li>
+        <li><a href="abonnementen.html" data-i18n="nav_premium">Premium</a></li>
+        <li><a href="profiel.html" data-i18n="footer_acc">My Account</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h4 data-i18n="footer_community">Community</h4>
+      <ul>
+        <li><a href="Privacy.html" data-i18n="footer_privacy">Privacy Policy</a></li>
+        <li><a href="algemeene-voorwaarden.html" data-i18n="footer_service_terms">Terms of Service</a></li>
+        <li><a href="contact.html" data-i18n="footer_support">Contact Support</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-socials">
+      <h4 data-i18n="footer_follow">Follow BrightNews</h4>
+      <div class="social-icons">
+        <a href="https://instagram.com/maartendeklerk" target="_blank" class="social-btn">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://linkedin.com/in/maartendeklerk" target="_blank" class="social-btn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/MaartenDeKlerkPXL/Brightnews.online" target="_blank" class="social-btn">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:info@BrightNews.online?subject=Vraag%20over%20BrightNews" class="social-btn">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+      <div class="framework-badge">
+        <span data-i18n="footer_no_frameworks">100% Vanilla JS • No Frameworks</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p data-i18n="footer_created_by">&copy; 2026 BrightNews • All rights reserved • Created with 💚 in the Netherlands</p>
+  </div>
+</footer>
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const hamburger = document.querySelector('.hamburger');
+
+    if (menu) {
+      menu.classList.toggle('active');
+      console.log("Menu status:", menu.classList.contains('active') ? "Open" : "Dicht");
+    } else {
+      console.error("Fout: Element #mobileMenu niet gevonden!");
+    }
+  }
+</script>
+</body>
+</html>

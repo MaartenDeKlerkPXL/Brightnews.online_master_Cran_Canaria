@@ -21,6 +21,10 @@
     <script src="index.js"></script>
     <script src="data/translations.js"></script>
     <script src="js/main.js"></script>
+    <script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
+    <script src="js/auth.js"></script>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2ecc71">
 </head>
 <body>
 <header>
@@ -104,7 +108,7 @@
                     Monthly renewable, cancel anytime.
                 </p>
 
-            <button onclick="window.location.href='https://ko-fi.com/summary/80402911-8919-44be-827a-a97fc4a993ee'" class="btn-primary" data-i18n="btn_glow">
+            <button onclick="startLemonCheckout('78215cb2-d818-497b-a4ea-f29424aacf6c')" class="btn-primary" data-i18n="btn_glow">
                 Choose Monthly
             </button>
         </div>
@@ -122,8 +126,8 @@
                 <p class="renewal-notice" style="font-size: 0.8em; color: #666; margin-top: 10px;" data-i18n="renewal_notice_year">
                     Yearly renewable, cancel anytime.
                 </p>
-            <button onclick="window.location.href='https://ko-fi.com/s/3bfa04cd44'" class="btn-primary" data-i18n="btn_shine">
-                Kies Jaarlijks
+            <button onclick="startLemonCheckout('993c7ac0-abeb-415c-a40c-ce00ef820235')" class="btn-primary" data-i18n="btn_shine">
+                Choose Yearly
             </button>
         </div>
     </section>

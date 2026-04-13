@@ -148,6 +148,7 @@ async function toonDetail(id) {
     const artikel = alleArtikelen.find(a => String(a.id) === String(id));
     if (!artikel) return;
 
+    updateMetaTags(artikel);
     // Sla positie op
     sessionStorage.setItem('brightScrollPos', window.scrollY);
 
@@ -335,29 +336,29 @@ function toggleShareMenu(event) {
 }
 
 function copyLink(event) {
+    // 1. Stop bubbling (slechts 1x nodig)
     if (event) event.stopPropagation();
-    const url = window.location.href;
+
     const btn = document.getElementById('mainShareBtn');
     const btnText = document.getElementById('share-btn-text');
 
-    if (event) event.stopPropagation();
-
+    // 2. Bepaal de juiste URL (Referral of standaard)
     const urlToCopy = window.currentArticleUrl || window.location.href;
 
+    // 3. Kopieer naar klembord
     navigator.clipboard.writeText(urlToCopy).then(() => {
-    });
-
-    navigator.clipboard.writeText(url).then(() => {
         // Haal vertaling op voor "Gekopieerd!"
         const copiedText = getT('copied', 'Copied!');
 
+        // Toon notificatie indien de functie bestaat
         if (typeof showNotification === "function") {
             showNotification(copiedText, "success");
         }
 
+        // UI Feedback op de knop zelf
         if (btn && btnText) {
             const oud = btnText.innerText;
-            btn.style.backgroundColor = "#d4edda";
+            btn.style.backgroundColor = "#d4edda"; // Lichtgroen succes-kleurtje
             btnText.innerText = copiedText;
 
             setTimeout(() => {
@@ -365,20 +366,18 @@ function copyLink(event) {
                 btnText.innerText = oud;
             }, 2000);
         }
+    }).catch(err => {
+        console.error("Kopieerfout:", err);
     });
 
+    // 4. Sluit het menu direct na het klikken
     const menu = document.getElementById('shareMenu');
     if (menu) menu.classList.remove('active');
 }
 
-// Event listeners
-document.addEventListener('click', () => {
-    const menu = document.getElementById('shareMenu');
-    if (menu) menu.classList.remove('active');
-});
-
 function terugNaarOverzicht() {
     window.history.pushState({}, '', window.location.pathname);
+    updateMetaTags(null);
     laadNieuws(huidigeTaal);
 }
 
@@ -393,7 +392,6 @@ async function wisselTaal(lang, labelTekst, event) {
 
     // 2. Synchroniseer de taal overal
     localStorage.setItem('selectedLanguage', lang);
-    localStorage.setItem('bright_lang', lang);
     window.huidigeTaal = lang;
     document.documentElement.lang = lang;
 
@@ -506,6 +504,65 @@ function filterByMetadata(category, btn) {
         : window.alleArtikelen.filter(a => window.actieveFilters.includes(a.category));
 
     renderLijst(gefilterd);
+}
+function updateMetaTags(artikel) {
+    const title = artikel ? `${artikel.title} | BrightNews ✨` : 'BrightNews ✨ Jouw dagelijkse dosis positiviteit';
+    const description = artikel ? (artikel.meta_description || artikel.summary.substring(0, 155)) : 'Alleen het beste, meest positieve nieuws van vandaag.';
+    const image = artikel ? artikel.image : 'https://brightnews.online/assets/brightnews-logo.png';
+    const url = window.location.href;
+
+    // Browser titel
+    document.title = title;
+
+    // Helper om meta tags te updaten of aan te maken
+    const setMeta = (name, value, isProperty = false) => {
+        const attr = isProperty ? 'property' : 'name';
+        let el = document.querySelector(`meta[${attr}="${name}"]`);
+        if (!el) {
+            el = document.createElement('meta');
+            el.setAttribute(attr, name);
+            document.head.appendChild(el);
+        }
+        el.setAttribute('content', value);
+    };
+
+    // Standaard SEO
+    setMeta('description', description);
+
+    // Facebook / LinkedIn (Open Graph)
+    setMeta('og:title', title, true);
+    setMeta('og:description', description, true);
+    setMeta('og:image', image, true);
+    setMeta('og:url', url, true);
+    setMeta('og:type', 'article', true);
+
+    // Twitter
+    setMeta('twitter:card', 'summary_large_image');
+    setMeta('twitter:title', title);
+    setMeta('twitter:description', description);
+    setMeta('twitter:image', image);
+}
+window.addEventListener('popstate', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id');
+    if (id) {
+        window.toonDetail(id);
+    } else {
+        // Forceer terug naar lijst zonder de pagina te herladen
+        const container = document.getElementById('news-container');
+        const detailView = document.getElementById('detail-view');
+        if(container) container.style.display = 'grid';
+        if(detailView) detailView.style.display = 'none';
+        window.laadNieuws(window.huidigeTaal);
+    }
+});
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        // Gebruik ook hier ./ zodat hij de projectnaam in de URL begrijpt
+        navigator.serviceWorker.register('./sw.js')
+            .then(reg => console.log('BrightNews PWA: Actief ✨'))
+            .catch(err => console.log('PWA Fout:', err));
+    });
 }
 
 window.toonDetail = toonDetail;
